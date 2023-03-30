@@ -203,7 +203,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OpenDoor
+      name: ClosedDoor
       rect:
         serializedVersion: 2
         x: 144
@@ -235,10 +235,10 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Open Door: -930591252
+      ClosedDoor: 1865248920
       Tree: -5855641
       Wall Lamp: 1053159599
       Light Post: 585030677
-      OpenDoor: 1865248920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
