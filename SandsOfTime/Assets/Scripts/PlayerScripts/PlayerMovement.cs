@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            anim.SetTrigger("isJumping");
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
@@ -47,6 +48,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
+
+        if (IsGrounded())
+        {
+            anim.SetBool("isJumping", false);
+        }
+        else
+        {
+            anim.SetBool("isJumping", true);
+        }
     }
 
     private void FixedUpdate()
