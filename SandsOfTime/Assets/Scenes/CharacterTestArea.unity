@@ -346,6 +346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00af39a7d71c8a344a76e88d238702a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: cc37be9c38a662a4886270cce11abf04, type: 2}
+  workspace: {x: 0, y: 0}
 --- !u!61 &567087693
 BoxCollider2D:
   m_ObjectHideFlags: 0
