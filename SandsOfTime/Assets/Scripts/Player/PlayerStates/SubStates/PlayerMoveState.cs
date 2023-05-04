@@ -8,9 +8,9 @@ public class PlayerMoveState : PlayerGroundedState
     {
     }
 
-    public override void DoCheck()
+    public override void DoChecks()
     {
-        base.DoCheck();
+        base.DoChecks();
     }
 
     public override void Enter()
@@ -29,7 +29,7 @@ public class PlayerMoveState : PlayerGroundedState
 
         player.CheckIfShouldFlip(xInput);
 
-        player.SetVeloccityX(PlayerData.movementVelocity * xInput);
+        player.SetVelocityX(PlayerData.movementVelocity * xInput);
 
         if(xInput == 0)
         {

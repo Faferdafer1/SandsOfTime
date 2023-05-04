@@ -8,15 +8,15 @@ public class PlayerIdleState : PlayerGroundedState
     {
     }
 
-    public override void DoCheck()
+    public override void DoChecks()
     {
-        base.DoCheck();
+        base.DoChecks();
     }
 
     public override void Enter()
     {
         base.Enter();
-        player.SetVeloccityX(0f);
+        player.SetVelocityX(0f);
     }
 
     public override void Exit()
