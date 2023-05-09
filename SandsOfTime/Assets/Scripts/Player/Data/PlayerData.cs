@@ -19,10 +19,4 @@ public class PlayerData : ScriptableObject
     [Header("Ledge Clim State")]
     public Vector2 startOffset;
     public Vector2 stopOffset;
-
-    [Header("Check Variables")]
-    public float groundCheckRadius = 0.3f;
-    public float wallCheckDistance = 0.5f;
-    public float ledgeCheckDistance = 0.5f;
-    public LayerMask whatIsGround;
 }

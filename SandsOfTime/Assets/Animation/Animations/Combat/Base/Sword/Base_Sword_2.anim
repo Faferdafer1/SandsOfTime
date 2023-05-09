@@ -30,6 +30,8 @@ AnimationClip:
       value: {fileID: 846422851, guid: fd277ca82da73b744ad600ddf8c00f59, type: 3}
     - time: 0.26666668
       value: {fileID: 1185412910, guid: fd277ca82da73b744ad600ddf8c00f59, type: 3}
+    - time: 0.33333334
+      value: {fileID: 1185412910, guid: fd277ca82da73b744ad600ddf8c00f59, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -57,17 +59,18 @@ AnimationClip:
     - {fileID: -30363183, guid: fd277ca82da73b744ad600ddf8c00f59, type: 3}
     - {fileID: 846422851, guid: fd277ca82da73b744ad600ddf8c00f59, type: 3}
     - {fileID: 1185412910, guid: fd277ca82da73b744ad600ddf8c00f59, type: 3}
+    - {fileID: 1185412910, guid: fd277ca82da73b744ad600ddf8c00f59, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -81,4 +84,39 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.06666667
+    functionName: AnimationStartMovementTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.06666667
+    functionName: AnimationTurnOffFlipTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.2
+    functionName: AnimationStopMovementTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.26666668
+    functionName: AnimationTurnOnFlipTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: AnimationFinishTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -167,8 +167,8 @@ GameObject:
   - component: {fileID: 567087692}
   - component: {fileID: 567087686}
   - component: {fileID: 567087691}
-  - component: {fileID: 567087690}
   - component: {fileID: 567087694}
+  - component: {fileID: 567087690}
   - component: {fileID: 567087689}
   - component: {fileID: 567087693}
   m_Layer: 11
@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 783970085}
   - component: {fileID: 783970087}
   - component: {fileID: 783970086}
+  - component: {fileID: 783970088}
   m_Layer: 11
   m_Name: Base
   m_TagString: Untagged
@@ -676,6 +677,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &783970088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783970084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47aaf74114d7dd347a287ab4c3f58da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &885384082
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c356b4562432bb340a4eed124dc41313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 480cf34de2f304c40a82deddb4d7602a, type: 2}
 --- !u!1 &924078549
 GameObject:
   m_ObjectHideFlags: 0
