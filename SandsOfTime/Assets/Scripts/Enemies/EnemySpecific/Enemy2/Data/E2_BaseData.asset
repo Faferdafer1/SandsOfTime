@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: E2_BaseData
   m_EditorClassIdentifier: 
   maxHealth: 30
-  dammageHopSpeed: 3
+  dammageHopSpeed: 10
   wallCheckDistance: 0.2
   ledgeCheckDistance: 0.4
   groundCheckRadius: 0.3
@@ -22,10 +22,10 @@ MonoBehaviour:
   stunResistance: 3
   stunRecoveryTime: 2
   closeRangeActionDistance: 1
-  hitParticle: {fileID: 0}
+  hitParticle: {fileID: 6440582008336821438, guid: 09d20de7d3761104a8bdf64bdd59b097, type: 3}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
