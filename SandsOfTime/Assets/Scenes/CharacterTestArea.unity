@@ -175,6 +175,41 @@ MonoBehaviour:
   idleStateData: {fileID: 11400000, guid: 35f37a08456bbf343a80936fc019527b, type: 2}
   moveStateData: {fileID: 11400000, guid: dfae3773a2510cc4ba18e3be0a82d9cf, type: 2}
   playerDetectedData: {fileID: 11400000, guid: b5b949f33f66a4f4e8ae241e612ad675, type: 2}
+  chargeStateData: {fileID: 11400000, guid: c31d75d3af9c5664cb38aab3c5213276, type: 2}
+  lookForPlayerStateData: {fileID: 11400000, guid: 775825fe9070d964f901a68607fe6024, type: 2}
+  meleeAttackStateData: {fileID: 11400000, guid: b7997cae326190f4ebd17ef6d190b180, type: 2}
+  meleeAttackPosition: {fileID: 159721664}
+--- !u!1 &159721663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159721664}
+  m_Layer: 10
+  m_Name: MeleeAttackPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &159721664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159721663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.024, y: -0.265, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 279511600}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &279511599
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +223,7 @@ GameObject:
   - component: {fileID: 279511603}
   - component: {fileID: 279511602}
   - component: {fileID: 279511601}
+  - component: {fileID: 279511605}
   m_Layer: 10
   m_Name: Alive
   m_TagString: Enemy
@@ -211,6 +247,7 @@ Transform:
   - {fileID: 843264675}
   - {fileID: 1266456687}
   - {fileID: 426509653}
+  - {fileID: 159721664}
   m_Father: {fileID: 121207918}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -358,6 +395,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &279511605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279511599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77acc83442f6584993ee2afc5a33ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &284181047
 GameObject:
   m_ObjectHideFlags: 0
