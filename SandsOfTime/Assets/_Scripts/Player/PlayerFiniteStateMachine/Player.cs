@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Greg.Weapons;
 using UnityEngine;
+using Greg.CoreSystem;
 
 public class Player : MonoBehaviour
 {
@@ -31,12 +33,21 @@ public class Player : MonoBehaviour
     #region Other Variables
 
     public Vector2 workspace;
+
+    private Weapon primaryWeapon;
+    private Weapon secondaryWeapon;
     #endregion
 
     #region Unity Callback Functions
     private void Awake()
     {
         Core = GetComponentInChildren<Core>();
+
+        primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
+        secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();
+
+        primaryWeapon.SetCore(Core);
+        secondaryWeapon.SetCore(Core);
 
         StateMachine = new PlayerStateMachine();
 
@@ -46,8 +57,8 @@ public class Player : MonoBehaviour
         InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
         LandState = new PlayerLandState(this, StateMachine, playerData, "land");
         LedgeClimbState = new PlayerLedgeClimbState(this, StateMachine, playerData, "LedgeClimbState");
-        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
-        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
+        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", primaryWeapon);
+        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", secondaryWeapon);
     }
 
     private void Start()

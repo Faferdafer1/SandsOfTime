@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using Greg.CoreSystem;
 
 public class Entity : MonoBehaviour
 {
