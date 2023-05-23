@@ -1,6 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Greg.Weapons.Components.ComponentData;
+using Greg.Weapons.Components;
 using UnityEngine;
 
 namespace Greg.Weapons
@@ -10,14 +11,27 @@ namespace Greg.Weapons
     {
         [field: SerializeField] public int NumberOfAttacks { get; private set; }
 
-        [field: SerializeReference] public List<ComponentData> componentData { get; private set; }
+        [field: SerializeReference] public List<ComponentData> ComponentData { get; private set; }
 
         public T GetData<T>()
         {
-            return componentData.OfType<T>().FirstOrDefault();
+            return ComponentData.OfType<T>().FirstOrDefault();
         }
 
-        [ContextMenu("Add Sprite Data")]
-        private void AddSpiteData() => componentData.Add(new WeaponSpriteData());
+        public List<Type> GetAllDependencies()
+        {
+            return ComponentData.Select(component => component.ComponentDependency).ToList();
+        }
+
+        public void AddData(ComponentData data)
+        {
+            //if type of data already exists do not add the data again
+            if (ComponentData.FirstOrDefault(t => t.GetType() == data.GetType()) != null)
+                return;
+            
+
+
+            ComponentData.Add(data);
+        }
     }
 }

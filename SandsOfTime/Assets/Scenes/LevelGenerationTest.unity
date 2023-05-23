@@ -329,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomRooms:
   - {fileID: 3581911132229758847, guid: a62eda7d49ba3f044b4fec10e7a84134, type: 3}
-  - {fileID: 8511769377383331947, guid: da41dd0b7bd0be44baea35d587220acf, type: 3}
+  - {fileID: 0}
   - {fileID: 7943015469962931234, guid: 3ca02e6684469e141ae99de352be92f8, type: 3}
   - {fileID: 2078617556431293227, guid: 7857c043265570b46960c5eae7223bc8, type: 3}
   - {fileID: 730989638338833921, guid: f7ccc360c4baa874593fd8186a32d380, type: 3}
@@ -337,20 +337,16 @@ MonoBehaviour:
   - {fileID: 2078617556431293227, guid: 7857c043265570b46960c5eae7223bc8, type: 3}
   - {fileID: 7696546911255210209, guid: 230a8d56a601412469c2a085f4ac7add, type: 3}
   - {fileID: 730989638338833921, guid: f7ccc360c4baa874593fd8186a32d380, type: 3}
-  - {fileID: 5705645856418798123, guid: a830057bc4cae584398f081b689b6914, type: 3}
+  - {fileID: 0}
   - {fileID: 5068976241720597207, guid: 8bbd638f10bb20f4aaa3a5b65f0d6005, type: 3}
   leftRooms:
+  - {fileID: 4876123222672662241, guid: 83952edc1b5e1524b98f43b09a84f28f, type: 3}
   - {fileID: 5171774680752807095, guid: 578cd7e5d6de8da45a266cc4ddd211b5, type: 3}
+  - {fileID: 5705645856418798123, guid: a830057bc4cae584398f081b689b6914, type: 3}
   - {fileID: 8511769377383331947, guid: da41dd0b7bd0be44baea35d587220acf, type: 3}
   - {fileID: 4876123222672662241, guid: 83952edc1b5e1524b98f43b09a84f28f, type: 3}
-  - {fileID: 2078617556431293227, guid: 7857c043265570b46960c5eae7223bc8, type: 3}
-  - {fileID: 5705645856418798123, guid: a830057bc4cae584398f081b689b6914, type: 3}
-  rightRooms:
   - {fileID: 4876123222672662241, guid: 83952edc1b5e1524b98f43b09a84f28f, type: 3}
-  - {fileID: 8504741325092987428, guid: f07769777c8068441bd4f530cb829def, type: 3}
-  - {fileID: 7943015469962931234, guid: 3ca02e6684469e141ae99de352be92f8, type: 3}
-  - {fileID: 2078617556431293227, guid: 7857c043265570b46960c5eae7223bc8, type: 3}
-  - {fileID: 5068976241720597207, guid: 8bbd638f10bb20f4aaa3a5b65f0d6005, type: 3}
+  rightRooms: []
   closedRoom: {fileID: 782943714}
   rooms: []
   waitTime: 2

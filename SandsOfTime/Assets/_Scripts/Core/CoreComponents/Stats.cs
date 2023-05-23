@@ -1,44 +1,30 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Greg.CoreSystem.StatsSystem;
 using UnityEngine;
 
 namespace Greg.CoreSystem
 {
     public class Stats : CoreComponent
     {
-        public event Action OnHealthZero;
+        [field: SerializeField] public Stat Health { get; private set; }
+        [field: SerializeField] public Stat Poise { get; private set; }
 
-
-        [SerializeField] private float maxHealth;
-        private float currentHealth;
-
+        [SerializeField] private float poiseRecoveryRate;
 
         protected override void Awake()
         {
             base.Awake();
 
-            currentHealth = maxHealth;
+            Health.Init();
+            Poise.Init();
         }
 
-        public void DecreaseHealth(float amount)
+        private void Update()
         {
-            currentHealth -= amount;
+            if (Poise.CurrentValue.Equals(Poise.MaxValue))
+                return;
 
-            if(currentHealth <= 0)
-            {
-                currentHealth = 0;
-
-                OnHealthZero?.Invoke();
-
-                Debug.Log("Health is zero!!");
-                //dead
-            }
-        }
-
-        public void IncreaseHealth(float amount)
-        {
-            currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+            Poise.Increase(poiseRecoveryRate * Time.deltaTime);
         }
     }
 }

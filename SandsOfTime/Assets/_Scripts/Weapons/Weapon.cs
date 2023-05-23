@@ -7,8 +7,9 @@ namespace Greg.Weapons
 {
     public class Weapon : MonoBehaviour
     {        
-        [field: SerializeField] public WeaponDataSO Data { get; private set; }
         [SerializeField] private float attackCounterResetCooldown;
+
+        public WeaponDataSO Data { get; private set; }
 
         public int CurrentAttackCounter
         {
@@ -46,6 +47,11 @@ namespace Greg.Weapons
         public void SetCore(Core core)
         {
             Core = core;
+        }
+
+        public void SetData(WeaponDataSO data)
+        {
+            Data = data;
         }
 
         private void Exit()

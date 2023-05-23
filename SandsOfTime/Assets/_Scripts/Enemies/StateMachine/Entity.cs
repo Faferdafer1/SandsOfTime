@@ -10,7 +10,6 @@ public class Entity : MonoBehaviour
     
     private Movement movement;
     
-
     public FiniteStateMachine stateMachine;
 
     public D_Entity entityData;
@@ -40,9 +39,13 @@ public class Entity : MonoBehaviour
     protected bool isStunned;
     protected bool isDead;
 
+    protected Stats stats;
+
     public virtual void Awake()
     {
         Core = GetComponentInChildren<Core>();
+
+        stats = Core.GetCoreComponent<Stats>();
 
         currentHealth = entityData.maxHealth;
         currentStunResistance = entityData.stunResistance;

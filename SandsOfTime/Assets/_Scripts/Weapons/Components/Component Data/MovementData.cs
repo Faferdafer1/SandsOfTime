@@ -1,10 +1,13 @@
-using Greg.Weapons.Components.ComponentData.AttackData;
+using Greg.Weapons.Components;
 using UnityEngine;
 
-namespace Greg.Weapons.Components.ComponentData
+namespace Greg.Weapons.Components
 {
-    public class MovementData : ComponentData
+    public class MovementData : ComponentData<AttackMovement>
     {
-        [field: SerializeField] public AttackMovement[] AttackData { get; private set; }    
+        protected override void SetComponentDepenency()
+        {
+            ComponentDependency = typeof(Movement);
+        }
     }
 }

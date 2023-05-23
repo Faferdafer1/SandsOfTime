@@ -358,7 +358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279511599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.56, y: -2.13, z: 0}
+  m_LocalPosition: {x: -3.5, y: -2.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -879,11 +879,15 @@ PrefabInstance:
     - target: {fileID: 1536393213846339328, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
       propertyPath: <Data>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 9a3979a5b600b114c908c769eaef454f, type: 2}
+      objectReference: {fileID: 11400000, guid: 5c213ad0b7e578a4abfb75b860438d3d, type: 2}
     - target: {fileID: 1536393213846339328, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
       propertyPath: attackCounterResetCooldown
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2342136105421015185, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c213ad0b7e578a4abfb75b860438d3d, type: 2}
     - target: {fileID: 8652192089996655219, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -932,7 +936,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondaryWeapon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6548120230148974844, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -981,7 +986,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9188f0f78a0a648a766f585ee3828a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  <Health>k__BackingField:
+    <MaxValue>k__BackingField: 50
+  <Poise>k__BackingField:
+    <MaxValue>k__BackingField: 25
+  poiseRecoveryRate: 5
 --- !u!1 &567087685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,7 +1354,9 @@ GameObject:
   m_Component:
   - component: {fileID: 676326309}
   - component: {fileID: 676326311}
+  - component: {fileID: 676326312}
   - component: {fileID: 676326310}
+  - component: {fileID: 676326313}
   m_Layer: 10
   m_Name: Combat
   m_TagString: Untagged
@@ -1425,8 +1436,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35eb3f9f9102c341aa9a212bbe37868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxKnockBackTime: 0.2
+--- !u!114 &676326312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676326308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab6b445bc1f61419e5e4a6159353ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damageParticles: {fileID: 6440582008336821438, guid: 09d20de7d3761104a8bdf64bdd59b097, type: 3}
-  maxKnockbackTime: 0.2
+--- !u!114 &676326313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676326308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2a9e4cca1afc14b9439c6ec6301d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &710021793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,6 +2880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351747776}
   - component: {fileID: 1351747778}
+  - component: {fileID: 1351747779}
   - component: {fileID: 1351747777}
   m_Layer: 11
   m_Name: Combat
@@ -2925,8 +2961,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35eb3f9f9102c341aa9a212bbe37868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxKnockBackTime: 0.2
+--- !u!114 &1351747779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351747775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab6b445bc1f61419e5e4a6159353ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damageParticles: {fileID: 6440582008336821438, guid: 09d20de7d3761104a8bdf64bdd59b097, type: 3}
-  maxKnockbackTime: 0.2
 --- !u!1 &1389584688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,7 +3141,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1805790008}
   - component: {fileID: 1805790010}
+  - component: {fileID: 1805790011}
   - component: {fileID: 1805790009}
+  - component: {fileID: 1805790012}
   m_Layer: 10
   m_Name: Combat
   m_TagString: Untagged
@@ -3173,8 +3223,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35eb3f9f9102c341aa9a212bbe37868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxKnockBackTime: 0.2
+--- !u!114 &1805790011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805790007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab6b445bc1f61419e5e4a6159353ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damageParticles: {fileID: 6440582008336821438, guid: 09d20de7d3761104a8bdf64bdd59b097, type: 3}
-  maxKnockbackTime: 0.2
+--- !u!114 &1805790012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805790007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2a9e4cca1afc14b9439c6ec6301d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1842012357
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,7 +3423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9188f0f78a0a648a766f585ee3828a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  <Health>k__BackingField:
+    <MaxValue>k__BackingField: 100
+  <Poise>k__BackingField:
+    <MaxValue>k__BackingField: 100
+  poiseRecoveryRate: 25
 --- !u!1 &1861813940
 GameObject:
   m_ObjectHideFlags: 0
@@ -3430,7 +3508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9188f0f78a0a648a766f585ee3828a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  <Health>k__BackingField:
+    <MaxValue>k__BackingField: 50
+  <Poise>k__BackingField:
+    <MaxValue>k__BackingField: 25
+  poiseRecoveryRate: 5
 --- !u!1 &1876926339
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,11 +3586,15 @@ PrefabInstance:
     - target: {fileID: 1536393213846339328, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
       propertyPath: <Data>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 0875dfd63206af747b1564d4c226e1ce, type: 2}
+      objectReference: {fileID: 11400000, guid: b95d66b42dffdf14b98a96af0f70d775, type: 2}
     - target: {fileID: 1536393213846339328, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
       propertyPath: attackCounterResetCooldown
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2342136105421015185, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: b95d66b42dffdf14b98a96af0f70d775, type: 2}
     - target: {fileID: 8652192089996655219, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3557,7 +3643,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrimaryWeapon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6548120230148974844, guid: b3650d3624fbee748aa3cd0380d862db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
