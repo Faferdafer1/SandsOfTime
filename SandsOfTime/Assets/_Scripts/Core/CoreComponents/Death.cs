@@ -1,3 +1,4 @@
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 namespace Greg.CoreSystem
@@ -6,11 +7,16 @@ namespace Greg.CoreSystem
     {
         [SerializeField] private GameObject[] deathParticles;
 
+        public GameObject gameController;
+        private GameController GameController;
+
+        private GameObject player;
+
         private ParticleManager ParticleManager => particleManager ? particleManager : core.GetCoreComponent(ref particleManager);
         private ParticleManager particleManager;
 
-        private Stats Stats => stats ? stats : core.GetCoreComponent(ref stats);
-        private Stats stats;
+        public Stats Stats => stats ? stats : core.GetCoreComponent(ref stats);
+        public Stats stats;
 
         public void Die()
         { 
@@ -20,6 +26,20 @@ namespace Greg.CoreSystem
             }
 
             core.transform.parent.gameObject.SetActive(false);
+
+
+            //player dies game over
+            if (!player.activeSelf)
+            {
+                Debug.Log("test1");
+                GameController.GameOver();
+            }
+        }
+
+        private void Start()
+        {
+            player = GameObject.Find("Player");
+            GameController = gameController.GetComponent<GameController>();
         }
 
         private void OnEnable()
